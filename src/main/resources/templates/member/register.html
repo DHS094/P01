@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+</head>
+<body>
+<div>
+  <h1>Register</h1>
+  <form action="/member/register" method="post">
+
+    <div>
+      <span>ID</span>
+      <input type="text" name="memberId" placeholder="ID" required>
+    </div>
+
+    <div>
+      <span>PW</span>
+      <input type="password" name="memberPw" placeholder="PW" required>
+    </div>
+
+    <div>
+      <span>NAME</span>
+      <input type="text" name="memberName" placeholder="NAME" required>
+    </div>
+
+    <div>
+      <span>Affiliation</span>
+      <input type="text" name="affiliation" placeholder="Affiliation">
+    </div>
+
+    <div>
+      <div>
+        <button type="submit">REGISTER</button>
+        <button type="reset">RESET</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+
+<script th:inline="javascript">
+  const errors= [[${errors}]]
+  let errorMsg=''
+  if(errors){
+    for(let i=0; i<errors.length; i++){
+      errorMsg += `${errors[i].field}은(는) ${errors[i].code}`
+    }
+    alert(errorMsg)
+  }
+
+</script>
+</html>
