@@ -1,138 +1,138 @@
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html xmlns:th="http://www.thymeleaf.org">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+<!--&lt;!&ndash;  <meta charset="UTF-8">&ndash;&gt;-->
+<!--&lt;!&ndash;  <title>LOGIN</title>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+<!--&lt;!&ndash;<div>&ndash;&gt;-->
+<!--&lt;!&ndash;  <h1>LOGIN</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;  <div th:if="${param.error}">&ndash;&gt;-->
+<!--&lt;!&ndash;    <p style="color:red;">로그인 실패. ID 또는 PW가 일치하지 않습니다.</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  <form th:action="@{/member/login}" method="post" id="f1">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <span>ID</span>&ndash;&gt;-->
+<!--&lt;!&ndash;      <input type="text" name="memberId" placeholder="ID" required>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <span>PW</span>&ndash;&gt;-->
+<!--&lt;!&ndash;      <input type="password" name="memberPw" placeholder="PW" required>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <div>&ndash;&gt;-->
+<!--&lt;!&ndash;      <div>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <button type="submit">LOGIN</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <a th:href="|@{/member/register}|">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <button type="button">Register</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <a th:href="|@{/member/delete}|">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;          <button type="button">Delete</button>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </a>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="button" class="btn btn-primary loginBtn">LOGIN</button>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <a th:href="|@{/member/register}|">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="button" class="btn-secondary regBtn">Register</button>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <a th:href="|@{/member/delete}|">&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <button type="button" class="btn-danger deleteBtn">Delete</button>&ndash;&gt;-->
+
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;  </form>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;<script th:inline="javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;  const errors = [[${errors}]]&ndash;&gt;-->
+<!--&lt;!&ndash;  let errorMsg=''&ndash;&gt;-->
+
+<!--&lt;!&ndash;  if(errors){&ndash;&gt;-->
+<!--&lt;!&ndash;    for(let i=0; i<errors.length ; i++){&ndash;&gt;-->
+<!--&lt;!&ndash;      errorMsg += `${errors[i].field}은(는) ${errors[i].code}`&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    history.replaceState({}, null, null)&ndash;&gt;-->
+<!--&lt;!&ndash;    alert(errorMsg)&ndash;&gt;-->
+<!--&lt;!&ndash;  }&ndash;&gt;-->
+
+<!--&lt;!&ndash;  const formObj = document.querySelector("#f1")&ndash;&gt;-->
+
+<!--&lt;!&ndash;  document.querySelector(".regBtn").addEventListener("click", function (e){&ndash;&gt;-->
+<!--&lt;!&ndash;    e.preventDefault()&ndash;&gt;-->
+<!--&lt;!&ndash;    e.stopPropagation()&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.action = '/member/register'&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.method = 'post'&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.submit()&ndash;&gt;-->
+<!--&lt;!&ndash;  }, false)&ndash;&gt;-->
+
+<!--&lt;!&ndash;  document.querySelector(".loginBtn").addEventListener("click", function (e){&ndash;&gt;-->
+<!--&lt;!&ndash;    e.preventDefault()&ndash;&gt;-->
+<!--&lt;!&ndash;    e.stopPropagation()&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.reset()&ndash;&gt;-->
+<!--&lt;!&ndash;    self.location = '/member/login'&ndash;&gt;-->
+<!--&lt;!&ndash;  }, false)&ndash;&gt;-->
+
+<!--&lt;!&ndash;  document.querySelector(".deleteBtn").addEventListener("click", function (e){&ndash;&gt;-->
+<!--&lt;!&ndash;    e.preventDefault()&ndash;&gt;-->
+<!--&lt;!&ndash;    e.stopPropagation()&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.action = '/member/delete'&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.method = 'post'&ndash;&gt;-->
+<!--&lt;!&ndash;    formObj.submit()&ndash;&gt;-->
+<!--&lt;!&ndash;  }, false)&ndash;&gt;-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
 <!--<!DOCTYPE html>-->
 <!--<html xmlns:th="http://www.thymeleaf.org">-->
 <!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <title>LOGIN</title>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>LOGIN</title>-->
 <!--</head>-->
 <!--<body>-->
 <!--<div>-->
-<!--  <h1>LOGIN</h1>-->
-<!--  <div th:if="${param.error}">-->
-<!--    <p style="color:red;">로그인 실패. ID 또는 PW가 일치하지 않습니다.</p>-->
-<!--  </div>-->
-
-<!--  <form th:action="@{/member/login}" method="post" id="f1">-->
-
-<!--    <div>-->
-<!--      <span>ID</span>-->
-<!--      <input type="text" name="memberId" placeholder="ID" required>-->
+<!--    <h1>LOGIN</h1>-->
+<!--    <div th:if="${param.error}">-->
+<!--        <p style="color:red;">로그인 실패. ID 또는 PW가 일치하지 않습니다.</p>-->
 <!--    </div>-->
 
-<!--    <div>-->
-<!--      <span>PW</span>-->
-<!--      <input type="password" name="memberPw" placeholder="PW" required>-->
-<!--    </div>-->
+<!--    <form th:action="@{/member/login}" method="post">-->
 
-<!--    <div>-->
-<!--      <div>-->
-<!--&lt;!&ndash;        <button type="submit">LOGIN</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        <a th:href="|@{/member/register}|">&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button">Register</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </a>&ndash;&gt;-->
-<!--&lt;!&ndash;        <a th:href="|@{/member/delete}|">&ndash;&gt;-->
-<!--&lt;!&ndash;          <button type="button">Delete</button>&ndash;&gt;-->
-<!--&lt;!&ndash;        </a>&ndash;&gt;-->
-<!--        <button type="button" class="btn btn-primary loginBtn">LOGIN</button>-->
-<!--&lt;!&ndash;        <a th:href="|@{/member/register}|">&ndash;&gt;-->
-<!--        <button type="button" class="btn-secondary regBtn">Register</button>-->
-<!--&lt;!&ndash;        <a th:href="|@{/member/delete}|">&ndash;&gt;-->
-<!--        <button type="button" class="btn-danger deleteBtn">Delete</button>-->
+<!--        <div>-->
+<!--            <span>ID</span>-->
+<!--            <input type="text" name="memberId" placeholder="ID" required>-->
+<!--        </div>-->
 
-<!--      </div>-->
-<!--    </div>-->
-<!--  </form>-->
+<!--        <div>-->
+<!--            <span>PW</span>-->
+<!--            <input type="password" name="memberPw" placeholder="PW" required>-->
+<!--        </div>-->
+
+<!--        <div>-->
+<!--            <div>-->
+<!--                <button type="submit">LOGIN</button>-->
+<!--                <a th:href="|@{/member/register}|">-->
+<!--                    <button type="button">Register</button>-->
+<!--                </a>-->
+<!--                <a th:href="|@{/member/delete}|">-->
+<!--                    <button type="button">Delete</button>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
 <!--</div>-->
 
 <!--</body>-->
-<!--<script th:inline="javascript">-->
-<!--  const errors = [[${errors}]]-->
-<!--  let errorMsg=''-->
 
-<!--  if(errors){-->
-<!--    for(let i=0; i<errors.length ; i++){-->
-<!--      errorMsg += `${errors[i].field}은(는) ${errors[i].code}`-->
-<!--    }-->
-<!--    history.replaceState({}, null, null)-->
-<!--    alert(errorMsg)-->
-<!--  }-->
+<!--&lt;!&ndash;<script th:inline="javascript">&ndash;&gt;-->
+<!--&lt;!&ndash;  const errors= [[${errors}]]&ndash;&gt;-->
+<!--&lt;!&ndash;  let errorMsg=''&ndash;&gt;-->
+<!--&lt;!&ndash;  if(errors){&ndash;&gt;-->
+<!--&lt;!&ndash;    for(let i=0; i<errors.length; i++){&ndash;&gt;-->
+<!--&lt;!&ndash;      errorMsg += `${errors[i].field}은(는) ${errors[i].code}`&ndash;&gt;-->
+<!--&lt;!&ndash;    }&ndash;&gt;-->
+<!--&lt;!&ndash;    alert(errorMsg)&ndash;&gt;-->
+<!--&lt;!&ndash;  }&ndash;&gt;-->
 
-<!--  const formObj = document.querySelector("#f1")-->
-
-<!--  document.querySelector(".regBtn").addEventListener("click", function (e){-->
-<!--    e.preventDefault()-->
-<!--    e.stopPropagation()-->
-<!--    formObj.action = '/member/register'-->
-<!--    formObj.method = 'post'-->
-<!--    formObj.submit()-->
-<!--  }, false)-->
-
-<!--  document.querySelector(".loginBtn").addEventListener("click", function (e){-->
-<!--    e.preventDefault()-->
-<!--    e.stopPropagation()-->
-<!--    formObj.reset()-->
-<!--    self.location = '/member/login'-->
-<!--  }, false)-->
-
-<!--  document.querySelector(".deleteBtn").addEventListener("click", function (e){-->
-<!--    e.preventDefault()-->
-<!--    e.stopPropagation()-->
-<!--    formObj.action = '/member/delete'-->
-<!--    formObj.method = 'post'-->
-<!--    formObj.submit()-->
-<!--  }, false)-->
-<!--</script>-->
+<!--&lt;!&ndash;</script>&ndash;&gt;-->
 <!--</html>-->
-
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>LOGIN</title>
-</head>
-<body>
-<div>
-    <h1>LOGIN</h1>
-    <div th:if="${param.error}">
-        <p style="color:red;">로그인 실패. ID 또는 PW가 일치하지 않습니다.</p>
-    </div>
-
-    <form th:action="@{/member/login}" method="post">
-
-        <div>
-            <span>ID</span>
-            <input type="text" name="memberId" placeholder="ID" required>
-        </div>
-
-        <div>
-            <span>PW</span>
-            <input type="password" name="memberPw" placeholder="PW" required>
-        </div>
-
-        <div>
-            <div>
-                <button type="submit">LOGIN</button>
-                <a th:href="|@{/member/register}|">
-                    <button type="button">Register</button>
-                </a>
-                <a th:href="|@{/member/delete}|">
-                    <button type="button">Delete</button>
-                </a>
-            </div>
-        </div>
-    </form>
-</div>
-
-</body>
-
-<!--<script th:inline="javascript">-->
-<!--  const errors= [[${errors}]]-->
-<!--  let errorMsg=''-->
-<!--  if(errors){-->
-<!--    for(let i=0; i<errors.length; i++){-->
-<!--      errorMsg += `${errors[i].field}은(는) ${errors[i].code}`-->
-<!--    }-->
-<!--    alert(errorMsg)-->
-<!--  }-->
-
-<!--</script>-->
-</html>

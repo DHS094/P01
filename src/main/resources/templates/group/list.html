@@ -1,25 +1,25 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Group List</title>
-</head>
-<body>
-<h1 th:text>Group List</h1>
-<ul>
-    <li th:each="dtoList:${list}">
-        <a th:href="@{/group/read(groupName=${dtoList.groupName})}">[[${dtoList.groupName}]]</a>
-        [[${dtoList.groupManager}]]
-    </li>
-</ul>
-<div>
-    <a th:href="|@{/group/register}|">
-        <button type="button">Register</button>
-    </a>
-</div>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Group List</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1 th:text>Group List</h1>-->
+<!--<ul>-->
+<!--    <li th:each="dtoList:${list}">-->
+<!--        <a th:href="@{/group/read(groupName=${dtoList.groupName})}">[[${dtoList.groupName}]]</a>-->
+<!--        [[${dtoList.groupManager}]]-->
+<!--    </li>-->
+<!--</ul>-->
+<!--<div>-->
+<!--    <a th:href="|@{/group/register}|">-->
+<!--        <button type="button">Register</button>-->
+<!--    </a>-->
+<!--</div>-->
 
-<script th:inline="javascript">
+<!--<script th:inline="javascript">-->
 
-</script>
-</body>
-</html>
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

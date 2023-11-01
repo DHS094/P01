@@ -31,7 +31,7 @@
                     <a href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
 <!--                        <a href="#!">LOGIN</a>-->
-                        <a th:href="@{/member/login}">LOGIN</a>
+                        <a th:href="@{/memberGroup/login}">LOGIN</a>
                         <a href="#!">MyInfo</a>
                         <div class="dropdown-divider"></div>
                         <a href="#!">Something else here</a>
@@ -46,12 +46,12 @@
             <h2>Group List</h2>
             <ul>
                 <li th:each="dtoList:${list}">
-                    <a th:href="@{/group/read(groupName=${dtoList.groupName})}">[[${dtoList.groupName}]]</a>
+                    <a th:href="@{/memberGroup/g_read(groupName=${dtoList.groupName})}">[[${dtoList.groupName}]]</a>
                     [[${dtoList.groupManager}]]
                 </li>
             </ul>
             <div>
-                <a th:href="|@{/group/register}|">
+                <a th:href="|@{/memberGroup/g_register}|">
                     <button type="button">Register</button>
                 </a>
             </div>

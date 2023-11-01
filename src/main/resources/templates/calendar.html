@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>Calendar Example</title>
-  <!-- FullCalendar 라이브러리 스타일시트 및 스크립트 로드 -->
-  <link rel="stylesheet" href="/webjars/fullcalendar/5.6.0/main.css" />
-  <script src="/webjars/fullcalendar/5.6.0/main.js"></script>
-</head>
-<body>
-<div id="calendar"></div>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Calendar Example</title>-->
+<!--  &lt;!&ndash; FullCalendar 라이브러리 스타일시트 및 스크립트 로드 &ndash;&gt;-->
+<!--  <link rel="stylesheet" href="/webjars/fullcalendar/5.6.0/main.css" />-->
+<!--  <script src="/webjars/fullcalendar/5.6.0/main.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div id="calendar"></div>-->
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth',
-      events: [
-        // todolist 동적 로드/thymeleaf로 데이터 전달
-        // { title: '이벤트 1', start: '2023-11-01', end: '2023-11-02' },
-        // 예: { title: '이벤트 2', start: '2023-11-15', end: '2023-11-17' },
-      ]
-    });
-    calendar.render();
-  });
-</script>
-</body>
-</html>
+<!--<script>-->
+<!--  document.addEventListener('DOMContentLoaded', function() {-->
+<!--    var calendarEl = document.getElementById('calendar');-->
+<!--    var calendar = new FullCalendar.Calendar(calendarEl, {-->
+<!--      initialView: 'dayGridMonth',-->
+<!--      events: [-->
+<!--        // todolist 동적 로드/thymeleaf로 데이터 전달-->
+<!--        // { title: '이벤트 1', start: '2023-11-01', end: '2023-11-02' },-->
+<!--        // 예: { title: '이벤트 2', start: '2023-11-15', end: '2023-11-17' },-->
+<!--      ]-->
+<!--    });-->
+<!--    calendar.render();-->
+<!--  });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
